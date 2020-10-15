@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/Contact.css">
+	<link rel="stylesheet" type="text/css" href="css/General.css">
+	<title>Ящук Максим. Контакт</title>
+</head>
+<body>
+	<header class="menu" style="margin-top: 7%;">
+		<hr>
+		<nav>
+			<a class="links" href="Main.html">Главная страница</a>
+			<a class="links" href="AboutMe.html">Обо мне</a>
+			<a class="links" href="MyInterest.html">Мои интересы</a>
+			<a class="links" href="Study.html">Учёба</a>
+			<a class="links" href="PhotoAlbum.html">Фотоальбом</a>
+			<a class="links" href="Test.html">Тест по дисциплине</a>
+		</nav>
+		<hr>
+	</header>
+	<section class="menu">
+		<hr>
+		<h1>Связь со мной</h1>
+		<hr>
+		<h3>Заполните форму</h3>
+		<form class="form" method="post" action="mailto:maksimkov2000@mail.ru">
+			<fieldset>
+				<div>
+					<label>ФИО  <input type="text" name="fio" maxlength="30" size="30"></label>
+				</div>
+				<div>
+					<label>Пол
+						<input type="radio" name="sex" value="Мужской"> Мужской
+						<input type="radio" name="sex" value="Женский"> Женский
+					</label>
+				</div>
+				<div>
+					<label for="age">Возраст</label>
+					<select name="age" size="1">
+						<option selected>Неопределён</option>
+						<option value="менее 16">Менее 16</option>
+						<option value="от 16 до 21">От 16 до 21</option>
+						<option value="от 22 до 35">От 22 до 35</option>
+						<option value="От 36 до 50">От 36 до 50</option>
+						<option value="Старше 50">Старше 50</option>
+					</select>
+				</div>
+				<div>
+					<label>E-Mail <input type="email" size="30"></label>
+				</div>
+				<div>
+					<input type="submit" value="Отправить">
+					<button type="reset">Очистить</button>
+				</div>
+			</fieldset>
+		</form>
+		<hr>
+	</section>
+</body>
+</html>

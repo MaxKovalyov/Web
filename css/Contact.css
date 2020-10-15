@@ -1,0 +1,19 @@
+section {
+	color: #fff;
+}
+
+.form {
+	width: 30%;
+	height: 60%;
+	background-color: #fff;
+	position: relative;
+	margin: 0 auto;
+	padding: 10px;
+	color: #000;
+	opacity: 90%;
+}
+
+.form div {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}

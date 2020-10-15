@@ -1,0 +1,23 @@
+.gall {
+	display: grid;
+	grid-template-columns: repeat(5, 50fr);
+	grid-template-rows: repeat(3, 10vw);
+	user-select: none;
+}
+
+.gall img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.gall img:hover {
+	max-width: 90%;
+   max-height: 90%;
+   z-index: 1;
+}
+
+.cell {
+	margin: 0;
+	padding: 10px;
+}

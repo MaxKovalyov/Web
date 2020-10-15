@@ -1,0 +1,21 @@
+article {
+	padding-left: 20px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	text-align: justify;
+}
+
+p {
+	text-indent: 30px;
+	line-height: 1;
+}
+
+section>p {
+	font-size: 25px;
+	color: #ff6;
+}
+
+/*article>p {
+	font-size: 25px;
+	color: #ff6;
+}*/

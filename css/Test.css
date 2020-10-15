@@ -1,0 +1,24 @@
+section {
+	color: #fff;
+}
+
+p {
+	margin-bottom: 10px;
+	color: #ffa;
+}
+
+div {
+	margin: 10px;
+}
+
+.form1 {
+	width: 50%;
+	margin: 0 auto;
+	background: #333
+}
+
+.form2 {
+	width: 60%;
+	margin: 0 auto; 
+	background: #333
+}
