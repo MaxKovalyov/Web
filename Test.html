@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/Test.css">
 	<link rel="stylesheet" type="text/css" href="css/General.css">
+	<script src="js/Test.js"></script>
 	<title>Ящук Максим. Тест</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
 	</header>
 	<section class="menu">
 		<hr>
-		<form method="post" action="mailto:maksimkov2000@mail.ru">
+		<form method="post" action="mailto:maksimkov2000@mail.ru" name="test_form" onsubmit="return validate();">
 			<h3>Введите ваши данные</h3>
 			<div class="form1">
 				<fieldset>
@@ -67,18 +68,18 @@
 				<fieldset>
 					<div>
 						<p>Сколько всего основных теорем линейного программирования?</p>
-						<input type="text" value="Введите число"><br>
+						<input type="text" placeholder="Введите число" name="question1"><br>
 					</div>
 					<div>
 						<p>Условия применения графического метода при решение задач ЛП? (несколько вариантов)</p>
-						<input type="checkbox" value="false"> более двух переменных <br>
-						<input type="checkbox" value="true"> две переменные <br>
-						<input type="checkbox" value="false"> наличие готовых графиков <br>
-						<input type="checkbox" value="true"> уравнения заданы в каноническом виде
+						<input type="checkbox" value="false" name="question2"> более двух переменных <br>
+						<input type="checkbox" value="true" name="question2"> две переменные <br>
+						<input type="checkbox" value="false" name="question2"> наличие готовых графиков <br>
+						<input type="checkbox" value="true" name="question2"> уравнения заданы в каноническом виде
 					</div>
 					<div>
 						<p>Что такое оптимум и с чем он связан?</p>
-						<select id="opt">
+						<select id="opt" name="question3">
 							<option value="none" selected>Выберите ответ</option>
 							<optgroup label="Связан с min и max">
 								<option value="true">Означает min и max</option>

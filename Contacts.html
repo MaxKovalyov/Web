@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/Contact.css">
 	<link rel="stylesheet" type="text/css" href="css/General.css">
+	<script src="js/Contacts.js"></script>
 	<title>Ящук Максим. Контакт</title>
 </head>
 <body>
@@ -25,7 +26,7 @@
 		<h1>Связь со мной</h1>
 		<hr>
 		<h3>Заполните форму</h3>
-		<form class="form" method="post" action="mailto:maksimkov2000@mail.ru">
+		<form class="form" method="post" action="mailto:maksimkov2000@mail.ru" name="form_cont" onsubmit="return validate();">
 			<fieldset>
 				<div>
 					<label>ФИО  <input type="text" name="fio" maxlength="30" size="30"></label>
@@ -48,7 +49,10 @@
 					</select>
 				</div>
 				<div>
-					<label>E-Mail <input type="email" size="30"></label>
+					<label>E-Mail <input type="email" size="30" name="email" placeholder="Введите ваш e-mail"></label>
+				</div>
+				<div>
+					<label>Телефон <input type="text" name="telef" placeholder="Введите номер телефона" onsubmit="return validNumber()"></label>
 				</div>
 				<div>
 					<input type="submit" value="Отправить">
