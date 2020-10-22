@@ -1,35 +1,40 @@
 function validate() {
-	valid = true;
 
 	if(document.test_form.fio.value=="") {
 		alert("Не заполнено обязательное поле ФИО!");
-		valid = false;
 		document.test_form.fio.focus();
+		return false;
 	}
 
 	if(document.test_form.group.selectedIndex==0) {
 		alert("Не выбрана группа!")
-		valid = false;
 		document.test_form.group.focus();
+		return false;
 	}
 
 	if(document.test_form.question1.value=="") {
 		alert("Не введён ответ!");
-		valid = false;
 		document.test_form.question1.focus();
+		return false;
 	}
 
-	if((document.test_form.question2[0].checked==false)&&(document.test_form.question2[1].checked==false)&&(document.test_form.question2[2].checked==false)&&(document.test_form.question2[3].checked==false)) {
-		alert("Не выбран ни один вариант!");
-		valid = false;
-		document.test_form.question2[0].focus();
+	var count_select_answer = 0;
+	var checkbx = document.test_form.question2;
+	for(var i=0;i<checkbx.length;i++) {
+		if(checkbx[i].checked == true) {
+			count_select_answer++
+		}
+	}
+	if(count_select_answer < 3) {
+		alert("Выбрано неверное количество ответов");
+		return false;
 	}
 
 	if(document.test_form.question3.selectedIndex==0) {
 		alert("Не выбран ни один вариант!");
-		valid = false;
 		document.test_form.question3.focus();
+		return false;
 	}
 
-	return valid;
+	return true;
 }

@@ -39,13 +39,5 @@ window.onload = function() {
 		ImageCollection[i].src = fotos[i];
 		ImageCollection[i].title = titles[i];
 		ImageCollection[i].alt = i;
-		/*//document.figure.writeln('<img src="'+fotos[i]+'" alt="'+i+'" title="'+titles[i]+'" class="gall_image">');
-		var img = document.createElement('IMG');
-      img.src = fotos[i];
-      img.alt = titles[i];
-      img.height = '200';
-      img.width = '300';
-      //document.body.appendChild(img);
-      //document.getElementById("demo").innerHTML = img;*/
 	}
 }
