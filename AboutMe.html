@@ -6,17 +6,40 @@
 	<title>Ящук Максим. Обо мне</title>
 	<link rel="stylesheet" type="text/css" href="css/AboutMe.css">
 	<link rel="stylesheet" type="text/css" href="css/General.css">
+	<script src="js/Dropdown.js"></script>
 </head>
 <body>
 	<header class="menu" style="margin-top: 7%;">
 		<hr>
 		<nav>
 			<a class="links" href="Main.html">Главная страница</a>
-			<a class="links" href="MyInterest.html">Мои интересы</a>
+			<div class="dropdown">
+				<a class="links" href="MyInterest.html" id="dropd" >Мои интересы</a>
+				<ul class="sub-menu" id="myDropdown">
+					<li>
+						<a class="sub" href="MyInterest.html#myfilm">Фильмы</a>
+					</li>
+					<li>
+						<a class="sub" href="MyInterest.html#mysportgame">Виды спорта</a>
+					</li>
+					<li>
+						<a class="sub" href="MyInterest.html#mygame">Компьютерные игры</a>
+					</li>
+					<li>
+						<a class="sub" href="MyInterest.html#mymusic">Музыка</a>
+					</li>
+					<li><hr></li>
+				</ul>
+			</div>
 			<a class="links" href="Study.html">Учёба</a>
 			<a class="links" href="PhotoAlbum.html">Фотоальбом</a>
 			<a class="links" href="Contacts.html">Контакт</a>
 			<a class="links" href="Test.html">Тест по дисциплине</a>
+			<div class="data" id="time">
+				<script>
+					startTime();
+				</script>
+			</div>
 		</nav>
 		<hr>
 	</header>

@@ -1,7 +1,7 @@
 .gall {
 	display: grid;
-	grid-template-columns: repeat(5, 50fr);
-	grid-template-rows: repeat(3, 10vw);
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(3, 20vh);
 	user-select: none;
 }
 
@@ -9,15 +9,45 @@
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
+	opacity: 0.6;
 }
 
 .gall img:hover {
-	max-width: 90%;
-   max-height: 90%;
    z-index: 1;
+   opacity: 1;
 }
 
 .cell {
 	margin: 0;
 	padding: 10px;
+}
+
+#shadow {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+	background: #000;
+	opacity: 0.5;
+	left: 0;
+	top: 0;
+}
+
+#bigimg {
+	height: 100%;
+	width: 100%;
+}
+
+#popupImg {
+	height: 640px;
+	width: 960px;
+	background: #fff;
+	top: 20%;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	z-index: 3;
+	position: fixed;
+	display: none;
+	border: 3px outset #fff;
 }

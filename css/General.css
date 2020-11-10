@@ -8,33 +8,71 @@ body {
 	background: #000;
 	width: 70%;
 	margin-left: 17%;
-	opacity: 85%;
+	font-size: 20px;
+}
+
+.main {
+	text-align: center;
+	background: #000;
+	width: 70%;
+	margin-left: 17%;
 	font-size: 20px;
 }
 
 .links {
 	color: #3ff;
 	text-decoration: none;
-	position: relative;
+	/*position: relative;
 	display: inline-block;
-	vertical-align: top;
-	margin: 0 10px;
+	vertical-align: top;*/
+	padding: 10px 12px;
 }
 
-/*.links:after {
-	content: "";
-	width: 100%;
-	height: 2px;
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.sub-menu {
 	display: none;
-	background-color: #00f;
 	position: absolute;
-	left: 0;
-}*/
+	min-width: 100px;
+	background-color: #000;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 0;
+	margin: 9px 0 0 0;
+	list-style-type: none;
+	z-index: 1000;
+}
+
+.sub-menu a {
+	color: #3ff;
+	text-decoration: none;
+	padding: 10px 9px;
+	display: block;
+}
+
+.sub-menu a:hover {
+	background-color: #335;
+}
 
 .links:hover {
-	color: #00f;
+	background-color: #335;
+	opacity: 80%;
+	transition: all 100ms ease-in;
 }
 
 .links:hover:after {
 	display: block;
+}
+
+.data {
+	position: relative;
+	display: inline-block;
+	width: 20%;
+	max-width: 240px;
+	min-width: 150px;
+	background-color: #000;
+	color: #f55;
+	border: 1px solid #faa;
 }

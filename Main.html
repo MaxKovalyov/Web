@@ -5,18 +5,41 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/Main.css">
 	<link rel="stylesheet" type="text/css" href="css/General.css">
+	<script src="js/Dropdown.js"></script>
 	<title>Ящук Максим. Главная страница</title>
 </head>
-<body>
+<body >
 	<header class="menu">
 		<hr>
 		<nav>
 			<a class="links" href="AboutMe.html">Обо мне</a>
-			<a class="links" href="MyInterest.html">Мои интересы</a>
+			<div class="dropdown">
+				<a class="links" href="MyInterest.html" id="dropd" >Мои интересы</a>
+				<ul class="sub-menu" id="myDropdown">
+					<li>
+						<a class="sub" href="MyInterest.html#myfilm">Фильмы</a>
+					</li>
+					<li>
+						<a class="sub" href="MyInterest.html#mysportgame">Виды спорта</a>
+					</li>
+					<li>
+						<a class="sub" href="MyInterest.html#mygame">Компьютерные игры</a>
+					</li>
+					<li>
+						<a class="sub" href="MyInterest.html#mymusic">Музыка</a>
+					</li>
+					<li><hr></li>
+				</ul>
+			</div>
 			<a class="links" href="Study.html">Учёба</a>
 			<a class="links" href="PhotoAlbum.html">Фотоальбом</a>
 			<a class="links" href="Contacts.html">Контакт</a>
 			<a class="links" href="Test.html">Тест по дисциплине</a>
+			<div class="data" id="time">
+				<script>
+					startTime();
+				</script>
+			</div>
 		</nav>
 		<hr>
 	</header>
