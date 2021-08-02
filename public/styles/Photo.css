@@ -1,0 +1,79 @@
+.gall {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(3, 20vh);
+	user-select: none;
+}
+
+.gall img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	opacity: 0.6;
+}
+
+.gall img:hover {
+   z-index: 1;
+   opacity: 1;
+}
+
+.cell {
+	margin: 0;
+	padding: 10px;
+}
+
+#shadow {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+	background: #000;
+	opacity: 0.6;
+	left: 0;
+	top: 0;
+}
+
+#bigimg {
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+#popupImg {
+	height: 640px;
+	width: 960px;
+	top: 10%;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	z-index: 3;
+	position: fixed;
+	display: none;
+	border: 3px outset #fff;
+}
+
+#prev-btn, #next-btn {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background-color: #fff;
+	border-radius: 50%;
+	bottom: 300px;
+}
+
+#prev-btn:hover, #next-btn:hover {
+	cursor: pointer;
+}
+
+#prev-btn {
+	left: 20px;
+}
+
+#prev-btn img, #next-btn img {
+	width: 100%;
+	height: 100%;
+}
+
+#next-btn {
+	left: 890px;
+}

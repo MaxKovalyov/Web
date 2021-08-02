@@ -1,0 +1,210 @@
+section {
+	color: #fff;
+}
+
+body {
+	position: relative;
+}
+
+h3 {
+	color:#fff;
+}
+
+.form {
+	width: 400px;
+	height: 60%;
+	border-radius: 100px 50px;
+	box-shadow: inset 0 0 15px 4px #000;
+	background-color: #fff;
+	position: relative;
+	margin: 0 auto;
+	padding: 10px;
+	color: #000;
+	opacity: 90%;
+}
+
+.label {
+	position: relative;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.error {
+	font-size: 24px;
+}
+
+p {
+	margin: 5px 0 0 0;
+	font-size: 16px;
+	color: #f23;
+}
+
+.popover {
+	position: absolute;
+	height: 60px;
+	width: 250px;
+	text-align: justify;
+	z-index: 2;
+	background: #ccc;
+	border-radius: 10px;
+	left: 360px;
+	bottom: -20px;
+	border: 3px outset #aaa;	
+}
+
+.popover p {
+	color: #000;
+	padding: 5px;
+	margin: 0;
+}
+
+#fio {
+	border: 0;
+	box-shadow: 0 0 15px 4px #aaa;
+	border-radius: 5px;
+}
+
+#telef {
+	border: 0;
+	box-shadow: 0 0 15px 4px #aaa;
+	border-radius: 5px;
+}
+
+#email {
+	border: 0;
+	box-shadow: 0 0 15px 4px #aaa;
+	border-radius: 5px;
+}
+
+#age {
+	border: 0;
+	box-shadow: 0 0 15px 4px #aaa;
+	border-radius: 5px;
+}
+
+#sex {
+	box-shadow: 0 0 15px 4px #aaa;
+}
+
+#data-r {
+	border: 0;
+	box-shadow: 0 0 15px 4px #aaa;
+	border-radius: 5px;
+}
+
+.button {
+	border: 0;
+	border-radius: 10px;
+	width: 100px;
+	height: 30px;
+	background: #eaff00;
+}
+
+.button:focus {
+	background: #9ACD32;
+	outline: none;
+}
+
+.calendar {
+	position: absolute;
+	width: 200px;
+	background: #eee;
+	border: 2px solid #eee;
+	display: none;
+	z-index: 1000;
+	margin-left: 158px;
+}
+
+.monayear {
+	background: #ffd700;
+	border-radius: 7px;
+	padding: 5px 10px;
+	align-items: center;
+}
+
+.day-name {
+	margin: 10px 0 10px 0;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	font-size: 14px;
+	font-weight: bolder;
+
+}
+
+.day {
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: repeat(5, 15px);
+}
+
+.day-value {
+	font-size: 14px;
+	background: #ffffff;
+	color: #00bfff;
+	font-weight: bold;
+}
+
+.day-value:hover {
+	background: #00bfff;
+	color: #ffefd5;
+}
+
+#month, #year {
+	border: 0;
+	border-radius: 5px;
+}
+
+div:hover {
+	cursor: default;
+}
+
+#modal {
+	position: fixed;
+	background: #ddd;
+	width: 500px;
+	height: 250px;
+	top: 30%;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	border-radius: 10px;
+	z-index: 6;
+	display: none;
+	border: 3px outset #fff;
+	margin: 0 auto;
+}
+
+#modal p {
+	color: #000;
+	padding: 30px;
+	font-size: 30px;
+}
+
+#yes, #no {
+	width: 100px;
+	margin: 20px;
+	font-size: 24px;
+	background: #fff;
+	border-radius: 10px;
+	border: 1px solid #000;
+	display: inline-block;
+	cursor: pointer;
+	color: #000;
+}
+
+#yes:hover, #no:hover {
+	background: #aaa;
+}
+
+.modal-blur {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	filter: blur(3px);
+	background: url('../Images/contacts.jpg');
+	left: 0;
+	top: 0;
+}
+

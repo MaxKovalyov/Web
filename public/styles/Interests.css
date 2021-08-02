@@ -1,0 +1,22 @@
+header {
+	margin-bottom: 30px;
+}
+
+section {
+	color: #fff;
+}
+
+.anchor {
+	color: #bbb;
+	text-decoration: blink;
+	position: relative;
+}
+
+.anchor:hover {
+	color: #88f;
+}
+
+.lists {
+	text-align: left;
+	list-style-type: circle;
+}
