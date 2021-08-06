@@ -7,6 +7,11 @@ return [
         'action' => 'index',
     ],
 
+    'index.php' => [
+        'controller' => 'main',
+        'action' => 'index',
+    ],
+
     'contact/index' => [
         'controller' => 'contact',
         'action' => 'index',

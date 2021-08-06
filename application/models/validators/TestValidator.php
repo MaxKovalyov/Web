@@ -1,38 +1,52 @@
-<?php # файл PostValidator.php
+<?php
 
 namespace application\models\validators;
 
-require 'application/models/validators/IRules.php';
-
-
-class TestValidator extends Validator
+class TestValidator
 {
 
     public $test_results = [];
+    private $errors = []; 
 
     public function __construct(array $data)
     {
-        if(!$_POST['checkbox']) {
-            $data['checkbox'] = '';
-        }
-        parent::__construct($data);
         $this->data  = $data;
     }
 
-
-    public function rules(): array
+    public function validate(): array
     {
-        // список правил-объектов проверяющих значение
-        return [
-            'fio'   => [ new IsFIO, new NotEmpty ],          // не должно быть пустое
-            'number' => [ new IsNumber, new NotEmpty ],
-            'checkbox' => [ new CheckBox ],
-            'select'=> [ new IsSelectedArray ],
-        ];
+        
+        $data  = $this->data;
+
+        foreach( $data as $field => $value )
+        {
+            if(empty($value)) {
+                $this->errors[$field] = 'Пустое поле!';
+            } else {
+                if($field == 'fio') {
+                    if(!preg_match("/^[A-ZА-ЯЁ]{1}[a-zа-яё-]+ [A-ZА-ЯЁ]{1}[a-zа-яё-]+ [A-ZА-ЯЁ]{1}[a-zа-яё-]/",$value)) {
+                        $this->errors[$field] = 'Неверно введено ФИО!'; 
+                    }
+                }
+                if($field == 'select' || $field == 'selectGroup') {
+                    foreach($value as $key => $val) {
+                        if($val == '0') {
+                            $this->errors[$field] = 'Ничего не выбрано!'; 
+                        }
+                    }
+                }
+                if($field == 'number') {
+                    if(!preg_match("/^[0-9]$/",$value)) {
+                        $this->errors[$field] = 'Введено не число!';
+                    }
+                }
+            }
+        }
+        return $this->errors;
     }
 
     public function checkTest(): array {
-        $countB = 0;
+        $countCorrect = 0;
         //debug($_POST);
         if($_POST['number']=='3') {
             $test_results['number'] = "Вопрос 1: Ответ верный!"; 
@@ -46,12 +60,11 @@ class TestValidator extends Validator
                 if($value == 'A') {
                     $test_results['checkbox'] = "Вопрос 2: Выбран неверный ответ!";
                     break;
-                }
-                if($value == 'B') {
-                    $countB++;
+                } else {
+                    $countCorrect++;
                 }
             }
-            if($countB == 3) {
+            if($countCorrect == 3) {
                 $test_results['checkbox'] = "Вопрос 2: Выбраны все верные ответы!";
             }
             else {

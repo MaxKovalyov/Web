@@ -8,21 +8,25 @@ use application\models\validators\TestValidator;
 class TestController extends Controller
 {
 
+    private $errors = [];
+
+    private $data = [];
+
     public function indexAction() {
-        $this->view->render('Тест по дисциплине');
+        $vars = [
+            'errors' => $this->errors,
+            'data' => $this->data,
+        ];
+        $this->view->render('Тест по дисциплине',$vars);
     }
 
     public function validationAction() {
-        $formData = $_POST;
-        //debug($_POST);
-        $validator = new TestValidator($formData);
-        $errors = $validator->validate();
-        //$this->view->render('Контакты');
-        if($errors) {
-            $vars = [
-                'errors' => $errors,
-            ];
-            $this->view->render('Валидация',$vars);
+        $this->data = $_POST;
+        $validator = new TestValidator($this->data);
+        $this->errors = $validator->validate();
+        if($this->errors) {
+            $this->view->path = "test/index";
+            $this->indexAction();
         } else {
             $results = $validator->checkTest();
             if($results) {

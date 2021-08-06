@@ -3,31 +3,35 @@
 namespace application\controllers;
 
 use application\core\Controller;
+use application\lib\FileManager;
 use application\models\validators\ContactValidator;
 
 class ContactController extends Controller
 {
+    private $errors = [];
+    private $data = [
+        'date' => "dd.month.yyyy",
+    ];
 
     public function validationAction() {
-        $formData = $_POST;
-        //debug($_POST);
-        $validator = new ContactValidator($formData);
-        $errors = $validator->validate();
-        //$this->view->render('Контакты');
-        if($errors) {
-            $vars = [
-                'errors' => $errors,
-            ];
-            $this->view->render('Валидация',$vars);
+        $this->data = $_POST;
+        $validator = new ContactValidator($this->data);
+        $this->errors = $validator->validate();
+        if($this->errors) {
+            $this->view->path = "contact/index";
+            $this->indexAction();
         } else {
-            $this->view->path = 'contact/index';
-            $this->view->render('Контакты');
+            header("Location: index");
+            exit();
         }
-        
     }
 
     public function indexAction() {
-        $this->view->render('Контакты');
+        $vars = [
+            'errors' => $this->errors,
+            'data' => $this->data,
+        ];
+        $this->view->render('Контакты',$vars);
     }
 
 
