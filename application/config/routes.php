@@ -57,5 +57,10 @@ return [
         'action' => 'validation',
     ],
 
+    'guestBook/index' => [
+        'controller' => 'guestBook',
+        'action' => 'index',
+    ],
+
 
 ];

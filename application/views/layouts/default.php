@@ -50,6 +50,7 @@
 			<a class="links" href="/contact/index">Контакт</a>
 			<a class="links" href="/test/index">Тест по дисциплине</a>
 			<a class="links" href="/history/index">История просмотра</a>
+			<a class="links" href="/guestBook/index">Гостевая книга</a>
 		</nav>
 		<hr>
 	</header>

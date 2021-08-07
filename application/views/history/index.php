@@ -32,6 +32,10 @@
 				<td>История просмотра</td>
 				<td class="counter">0</td>
 			</tr>
+			<tr>
+				<td>Гостевая книга</td>
+				<td class="counter">0</td>
+			</tr>
 		</table>
 		<hr>
 		<h2>История за всё время</h2>
@@ -64,6 +68,10 @@
 				<td>Учёба</td>
 				<td class="counter">0</td>
 				<td>История просмотра</td>
+				<td class="counter">0</td>
+			</tr>
+			<tr>
+				<td>Гостевая книга</td>
 				<td class="counter">0</td>
 			</tr>
 		</table>
