@@ -46,35 +46,28 @@ class TestValidator
     }
 
     public function checkTest(): array {
-        $countCorrect = 0;
         //debug($_POST);
         if($_POST['number']=='3') {
-            $test_results['number'] = "Вопрос 1: Ответ верный!"; 
+            $test_results['answer1'] = 1; 
         } else {
-            $test_results['number'] = "Вопрос 1: Ответ неверный!"; 
+            $test_results['answer1'] = 0; 
         }
-        if(empty($_POST['checkbox'])) {
-            $test_results['checkbox'] = "Вопрос 2: Ответ не выбран!";
-        } else {
-            foreach($_POST['checkbox'] as $key => $value) {
-                if($value == 'A') {
-                    $test_results['checkbox'] = "Вопрос 2: Выбран неверный ответ!";
-                    break;
-                } else {
-                    $countCorrect++;
-                }
-            }
-            if($countCorrect == 3) {
-                $test_results['checkbox'] = "Вопрос 2: Выбраны все верные ответы!";
-            }
-            else {
-                $test_results['checkbox'] = "Вопрос 2: Выбраны не все верные ответы!"; 
-            }
+        
+        $strAnswer = "";
+        foreach($_POST['checkbox'] as $key => $value) {
+            $strAnswer = $strAnswer.$value;
         }
-        if($_POST['select'][1] == 'true') {
-            $test_results['select'] = "Вопрос 3: Выбран правильный ответ!";
+        if($strAnswer == "BCD") {
+            $test_results['answer2'] = 1; 
         } else {
-            $test_results['select'] = "Вопрос 3: Выбран неверный ответ!";
+            $test_results['answer2'] = 0; 
+        }
+        
+
+        if($_POST['select'][0] == '1') {
+            $test_results['answer3'] = 1;
+        } else {
+            $test_results['answer3'] = 0;
         }
         return $test_results;
     }
