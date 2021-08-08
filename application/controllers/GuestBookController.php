@@ -7,7 +7,7 @@ use application\lib\FileManager;
 
 class GuestBookController extends Controller
 {
-    private $nameFile = "messages.inc";
+    private $nameFile = "public/files/messages.inc";
 
 
     public function indexAction() {

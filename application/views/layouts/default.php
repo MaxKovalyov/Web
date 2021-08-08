@@ -48,9 +48,10 @@
 			<a class="links" href="/study/index">Учёба</a>
 			<a class="links" href="/photo/index">Фотоальбом</a>
 			<a class="links" href="/contact/index">Контакт</a>
-			<a class="links" href="/test/index">Тест по дисциплине</a>
+			<a class="links" href="/test/index">Тест</a>
 			<a class="links" href="/history/index">История просмотра</a>
 			<a class="links" href="/guestBook/index">Гостевая книга</a>
+			<a class="links" href="/uploadFile/index">Загрузить файл</a>
 		</nav>
 		<hr>
 	</header>

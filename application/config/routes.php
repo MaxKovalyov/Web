@@ -62,5 +62,10 @@ return [
         'action' => 'index',
     ],
 
+    'uploadFile/index' => [
+        'controller' => 'uploadFile',
+        'action' => 'index',
+    ],
+
 
 ];
