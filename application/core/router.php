@@ -50,10 +50,10 @@ class Router
                     $controller = new $path($this->params);
                     $controller->$action();
                 } else {
-                    View::errorCode(404);
+                    View::errorCode(403);
                 }
             } else {
-                View::errorCode(404);
+                View::errorCode(403);
             }
         } else {
             View::errorCode(404);

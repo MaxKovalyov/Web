@@ -34,20 +34,4 @@ class Test extends BaseActiveRecord {
 
     }
 
-    public function save() {
-        $fields_list = array();
-        foreach(static::$dbFields as $field => $field_type) {
-            $value = $this->$field;
-            if(strpos($field_type, 'int')===false && strpos($field_type, 'tinyint(1)')===false) $value = "'$value'";
-            $fields_list[] = "$value";
-        }
-        $sql = "INSERT INTO ".static::$tableName." VALUES(".join(',',$fields_list).");";
-        $stmt = static::$pdo->query($sql);
-        if($stmt) {
-            return $stmt->fetch(PDO::FETCH_ASSOC);
-        } else {
-            print_r(static::$pdo->errorInfo());
-        }
-    }
-
 }

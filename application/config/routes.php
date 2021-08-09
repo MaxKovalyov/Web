@@ -67,5 +67,10 @@ return [
         'action' => 'index',
     ],
 
+    'blogEditor/index' => [
+        'controller' => 'blogEditor',
+        'action' => 'index',
+    ],
+
 
 ];

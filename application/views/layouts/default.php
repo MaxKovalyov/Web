@@ -28,6 +28,7 @@
 			<a class="links" href="/test/index">Тест</a>
 			<a class="links" href="/guestBook/index">Гостевая книга</a>
 			<a class="links" href="/uploadFile/index">Загрузить файл</a>
+			<a class="links" href="/blogEditor/index">Редактор блога</a>
 			<div class="dropdown">
 				<a class="links" href="" id="dropd" >Другое</a>
 				<ul class="sub-menu" id="myDropdown">

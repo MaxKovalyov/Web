@@ -43,7 +43,7 @@ class BaseActiveRecord {
     }
 
     public static function find($id) {
-        $sql = "SELECT * FROM ".static::$tableName." WHERE id = ".$id;
+        $sql = "SELECT * FROM ".static::$tableName." WHERE id = $id";
         $stmt = static::$pdo->query($sql);
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -60,6 +60,19 @@ class BaseActiveRecord {
         return $ar_obj;
     }
 
+    public static function findAll() {
+        $sql = "SELECT * FROM ".static::$tableName;
+        $stmt = static::$pdo->query($sql);
+
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if(!$rows) {
+            return null;
+        } else {
+            return $rows;
+        }
+    }
+
     public function delete() {
         $sql = "DELETE FROM ".static::$tableName." WHERE id = ".$this->id;
         $stmt = static::$pdo->query($sql);
@@ -71,56 +84,35 @@ class BaseActiveRecord {
     }
 
     public function save() {
-        $sql = "SELECT * FROM ".static::$tableName." WHERE id = ".$this->id;
+        $fields_list = array();
+        foreach(static::$dbFields as $field => $field_type) {
+            $value = $this->$field;
+            if(strpos($field_type, 'int')===false && strpos($field_type, 'tinyint(1)')===false) $value = "'$value'";
+            $fields_list[] = "$value";
+        }
+        $sql = "INSERT INTO ".static::$tableName." VALUES(".join(',',$fields_list).");";
         $stmt = static::$pdo->query($sql);
-        $row = $stmt->fetch();
-        if(!$row) {
-            $fields_list = array();
-            foreach(static::$dbFields as $field => $field_type) {
-                $value = $this->$field;
-                if(strpos($field_type, 'int')===false) $value = "'$value'";
-                $fields_list[] = "$value";
-            }
-            $sql = "INSERT INTO ".static::$tableName." VALUES(".join(',',$fields_list).");";
-            $stmt = static::$pdo->query($sql);
-            if($stmt) {
-                return $stmt->fetch(PDO::FETCH_ASSOC);
-            } else {
-                print_r(static::$pdo->errorInfo());
-            }
+        if($stmt) {
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         } else {
-            $fields_list = array();
-            foreach(static::$dbFields as $field => $field_type) {
-                $value = $this->$field;
-                if(strpos($field_type, 'int')===false) $value = "'$value'";
-                $fields_list[] = "$field = $value";
-            }
-            $sql = "UPDATE ".static::$tableName." SET ".join(',',$fields_list)." WHERE id = ".$this->id;
-            $stmt = static::$pdo->query($sql);
-            if($stmt) {
-                return $stmt->fetch(PDO::FETCH_ASSOC);
-            } else {
-                print_r(static::$pdo->errorInfo());
-            }
+            print_r(static::$pdo->errorInfo());
         }
     }
 
-    public static function findAll() {
-        $sql = "SELECT * FROM ".static::$tableName;
+    public function update() {
+        $fields_list = array();
+        foreach(static::$dbFields as $field => $field_type) {
+            $value = $this->$field;
+            if(strpos($field_type, 'int')===false) $value = "'$value'";
+            $fields_list[] = "$field = $value";
+        }
+        $sql = "UPDATE ".static::$tableName." SET ".join(',',$fields_list)." WHERE id = ".$this->id;
         $stmt = static::$pdo->query($sql);
-
-        $rows = $stmt->fetchAll();
-
-        if(!$rows) {
-            return null;
-        }
-        debug($rows);
-        $ar_objs = [];
-        foreach($rows as $key => $value) {
-            
+        if($stmt) {
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } else {
+            print_r(static::$pdo->errorInfo());
         }
     }
-
-
 
 }
