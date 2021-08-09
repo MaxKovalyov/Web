@@ -61,16 +61,20 @@ class BaseActiveRecord {
     }
 
     public static function findAll() {
-        $sql = "SELECT * FROM ".static::$tableName;
+        $sql = "SELECT * FROM ".static::$tableName." ORDER BY date DESC";
+        $stmt = static::$pdo->query($sql);
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
+    public static function findSome($start, $per_page) {
+        $sql = "SELECT * FROM ".static::$tableName." ORDER BY date DESC LIMIT $start, $per_page";
         $stmt = static::$pdo->query($sql);
 
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        if(!$rows) {
-            return null;
-        } else {
-            return $rows;
-        }
+        return $rows;
     }
 
     public function delete() {
@@ -114,5 +118,11 @@ class BaseActiveRecord {
             print_r(static::$pdo->errorInfo());
         }
     }
+
+    public static function getCountRecords() {
+        $sql = "SELECT COUNT(*) FROM ".static::$tableName;
+        return static::$pdo->query($sql)->fetchColumn();
+    }
+
 
 }

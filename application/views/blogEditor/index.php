@@ -1,6 +1,6 @@
 <section class="main">
     <div class="form-guest">
-        <form class="form" action="/blogEditor/index" method="POST">
+        <form class="form" action="/blogEditor/index" method="POST" enctype="multipart/form-data">
             <h3>Добавление блога</h3>
             <div class="form-row">
                 <input type="text" name="title" placeholder="Тема сообщения" value="<?php echo @$data["title"]?>" required autocomplete="off">

@@ -2,7 +2,7 @@
 
 return [
 
-    '' => [
+    'main/index' => [
         'controller' => 'main',
         'action' => 'index',
     ],
@@ -69,6 +69,11 @@ return [
 
     'blogEditor/index' => [
         'controller' => 'blogEditor',
+        'action' => 'index',
+    ],
+
+    'myBlog/index' => [
+        'controller' => 'myBlog',
         'action' => 'index',
     ],
 

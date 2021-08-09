@@ -205,7 +205,7 @@ div:hover {
 	height: 100%;
 	z-index: 1;
 	filter: blur(3px);
-	background: url('../Images/contacts.jpg');
+	background: url('../files/contacts.jpg');
 	left: 0;
 	top: 0;
 }

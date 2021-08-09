@@ -11,7 +11,7 @@ window.onload = function() {
 			indexImg = 0;
 		}
 		$('#bigimg').attr({
-			src: "/public/Images/"+(indexImg+1)+".jpg",
+			src: "/public/files/"+(indexImg+1)+".jpg",
 			title: titles[indexImg],
 			alt: indexImg
 		})
@@ -26,7 +26,7 @@ window.onload = function() {
 			indexImg = fotos-1;
 		}
 		$('#bigimg').attr({
-			src: "/public/Images/"+(indexImg+1)+".jpg",
+			src: "/public/files/"+(indexImg+1)+".jpg",
 			title: titles[indexImg],
 			alt: indexImg
 		})

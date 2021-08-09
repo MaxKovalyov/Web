@@ -18,12 +18,16 @@ class BlogEditorController extends Controller
 
         if(array_key_exists('title', $_POST)) {
             $this->data = $_POST;
+            $this->data["img"] = $_FILES["img"]["name"];
             $validator = new BlogValidator($this->data);
             $this->errors = $validator->validate();
             if(!$this->errors) {
-                $this->model->date = date("Y-m-d");
+                $source = $_FILES["img"]["tmp_name"];
+                $dest = "public/files/".$_FILES["img"]["name"];
+                move_uploaded_file($source, $dest);
+                $this->model->date = date("Y-m-d H:i:s");
                 $this->model->title = $_POST["title"];
-                $this->model->img = "public/files/".$_POST["img"];
+                $this->model->img = "public/files/".$_FILES["img"]["name"];
                 $this->model->message = $_POST["message"];
                 $this->model->save();
                 $this->data = [];

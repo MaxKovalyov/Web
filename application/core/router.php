@@ -4,24 +4,25 @@ namespace application\core;
 
 class Router 
 {
-    protected $routes = [];
+    protected $routes;
     protected $params = [];  
 
     function __construct() {
-        $arr = require 'application/config/routes.php';
-        foreach($arr as $key => $val) {
-            $this->add($key, $val);
-        }
+        $routesPath = 'application/config/routes.php';
+        $this->routes = include($routesPath);
+        // foreach($arr as $key => $val) {
+        //     $this->add($key, $val);
+        // }
     }
 
     /**
      * Создание пути
      */
-    public function add($route, $params) {
-        $route = '#^'.$route.'$#';
-        $this->routes[$route] = $params;
-        //debug($this->routes);
-    }
+    // public function add($route, $params) {
+    //     $route = '#^'.$route.'$#';
+    //     $this->routes[$route] = $params;
+    //     //debug($this->routes);
+    // }
 
     /**
      * Проверка на существование пути
@@ -29,7 +30,7 @@ class Router
     public function match() {
         $url = trim($_SERVER['REQUEST_URI'], '/');
         foreach($this->routes as $route => $params) {
-            if(preg_match($route, $url, $matches)) {
+            if(preg_match("~$route~", $url, $matches)) {
                 $this->params = $params;
                 return true;
             }
@@ -43,7 +44,6 @@ class Router
     public function run() {
         if($this->match()) {
             $path = 'application\controllers\\'.ucfirst($this->params['controller']).'Controller';
-            //debug($path);
             if(class_exists($path)) {
                 $action = $this->params['action'].'Action';
                 if(method_exists($path, $action)) {

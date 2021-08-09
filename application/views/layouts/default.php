@@ -23,12 +23,13 @@
     <header class="menu">
 		<hr>
 		<nav>
-            <a class="links" href="/">Главная страница</a>
+            <a class="links" href="/main/index">Главная страница</a>
 			<a class="links" href="/contact/index">Контакт</a>
 			<a class="links" href="/test/index">Тест</a>
 			<a class="links" href="/guestBook/index">Гостевая книга</a>
 			<a class="links" href="/uploadFile/index">Загрузить файл</a>
 			<a class="links" href="/blogEditor/index">Редактор блога</a>
+			<a class="links" href="/myBlog/index">Мой блог</a>
 			<div class="dropdown">
 				<a class="links" href="" id="dropd" >Другое</a>
 				<ul class="sub-menu" id="myDropdown">
