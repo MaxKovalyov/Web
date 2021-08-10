@@ -14,6 +14,8 @@ class BlogEditor extends BaseActiveRecord{
 
     public $img;
 
+    public $autor;
+
     public $message;
 
     function __construct() {

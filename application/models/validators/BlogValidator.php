@@ -5,6 +5,7 @@ namespace application\models\validators;
 class BlogValidator
 {
 
+    private $data = [];
     private $errors = []; 
 
     public function __construct(array $data)

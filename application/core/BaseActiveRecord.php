@@ -103,6 +103,23 @@ class BaseActiveRecord {
         }
     }
 
+    /*Подготавливаемый запрос*/
+    public static function saveAll($data) {
+        if(count($data) > 0) {
+            $sql = "INSERT INTO ".static::$tableName." VALUES(:date, :title, :img, :message, :autor);";
+            $s = static::$pdo->prepare($sql);
+            for($i = 0; $i < count($data); $i++) {
+                $s->bindParam(':date',$data[$i][3]);
+                $s->bindParam(':title',$data[$i][0]);
+                $s->bindParam(':img',$data[$i][4]);
+                $s->bindParam(':message',$data[$i][1]);
+                $s->bindParam(':autor',$data[$i][2]);
+                $s->execute();
+            }
+        }
+        
+    }
+
     public function update() {
         $fields_list = array();
         foreach(static::$dbFields as $field => $field_type) {

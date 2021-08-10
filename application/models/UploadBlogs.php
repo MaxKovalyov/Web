@@ -4,7 +4,7 @@ namespace application\models;
 
 use application\core\BaseActiveRecord;
 
-class MyBlog extends BaseActiveRecord{
+class UploadBlogs extends BaseActiveRecord{
 
     protected static $tableName = 'blog';
 

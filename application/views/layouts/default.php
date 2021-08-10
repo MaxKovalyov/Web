@@ -29,6 +29,7 @@
 			<a class="links" href="/guestBook/index">Гостевая книга</a>
 			<a class="links" href="/uploadFile/index">Загрузить файл</a>
 			<a class="links" href="/blogEditor/index">Редактор блога</a>
+			<a class="links" href="/uploadBlogs/index">Загрузить блог</a>
 			<a class="links" href="/myBlog/index">Мой блог</a>
 			<div class="dropdown">
 				<a class="links" href="" id="dropd" >Другое</a>

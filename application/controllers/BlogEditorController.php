@@ -29,6 +29,7 @@ class BlogEditorController extends Controller
                 $this->model->title = $_POST["title"];
                 $this->model->img = "public/files/".$_FILES["img"]["name"];
                 $this->model->message = $_POST["message"];
+                $this->model->autor = 'none';
                 $this->model->save();
                 $this->data = [];
             }

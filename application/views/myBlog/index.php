@@ -5,6 +5,7 @@
             echo '<div class="row">';
             echo '<div class="col-md-7">';
             echo '<h2>'.$key["title"].'</h2>';
+            echo '<p class="lead">Автор: '.$key["autor"].'</p>';
             echo '<p class="lead">Дата добавления: '.$key["date"].'</p>';
             echo '<p class="lead">Описание: '.$key["message"].'</p>';
             echo '</div>';

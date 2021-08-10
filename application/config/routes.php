@@ -77,5 +77,10 @@ return [
         'action' => 'index',
     ],
 
+    'uploadBlogs/index' => [
+        'controller' => 'uploadBlogs',
+        'action' => 'index',
+    ],
+
 
 ];
