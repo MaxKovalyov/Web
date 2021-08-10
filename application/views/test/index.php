@@ -13,33 +13,27 @@
 						<select id="group" name="selectGroup[]">
 							<option value="0" selected>Неопределено</option>
 							<optgroup label="1 курс">
-								<option value="1IS1">ИС-20-1</option>
-								<option value="1IS3">ИС-20-2</option>
-								<option value="1IS2">ИС-20-3</option>
-								<option value="1PI1">ПИ-20-1</option>
+								<option value="ИС-20-1">ИС-20-1</option>
+								<option value="ИС-20-2">ИС-20-2</option>
+								<option value="ИС-20-3">ИС-20-3</option>
+								<option value="ПИ-20-1">ПИ-20-1</option>
 							</optgroup>
 							<optgroup label="2 курс">
-								<option value="2IS1">ИС-19-1</option>
-								<option value="2IS2">ИС-19-2</option>
-								<option value="2IS3">ИС-19-3</option>
-								<option value="2PI1">ПИ-19-1</option>
+								<option value="ИС-19-1">ИС-19-1</option>
+								<option value="ИС-19-2">ИС-19-2</option>
+								<option value="ИС-19-3">ИС-19-3</option>
+								<option value="ПИ-19-1">ПИ-19-1</option>
 							</optgroup>
 							<optgroup label="3 курс">
-								<option value="3IS1">ИС-18-1</option>
-								<option value="3IS2">ИС-18-2</option>
-								<option value="3IS3">ИС-18-3</option>
-								<option value="3PI1">ПИ-18-1</option>
+								<option value="ИС-18-1">ИС-18-1</option>
+								<option value="ИС-18-2">ИС-18-2</option>
+								<option value="ИС-18-3">ИС-18-3</option>
+								<option value="ПИ-18-1">ПИ-18-1</option>
 							</optgroup>
 							<optgroup label="4 курс">
-								<option value="4IS1">ИС-17-1</option>
-								<option value="4IS2">ИС-17-2</option>
-								<option value="4PI1">ПИ-17-1</option>
-							</optgroup>
-							<optgroup label="Магистры">
-								<option value="m1IS">ИС/м-16</option>
-								<option value="m2IS">ИС/м-15</option>
-								<option value="m1PI">ПИ/м-16</option>
-								<option value="m2PI">ПИ/м-15</option>
+								<option value="ИС-17-1">ИС-17-1</option>
+								<option value="ИС-17-2">ИС-17-2</option>
+								<option value="ПИ-17-1">ПИ-17-1</option>
 							</optgroup>
 						</select>
 						<span class="error"><?php echo @$errors["selectGroup"] ?></span>
@@ -68,19 +62,19 @@
 						<select id="select" name="select[]">
 							<option value="0" selected>Выберите ответ</option>
 							<optgroup label="Связан с min и max">
-								<option value="true"
-								<?php if (isset($data["select"]) && @$data["select"][0] == "true") echo "selected";?>
-								>Означает min и max</option>
 								<option value="1"
 								<?php if (isset($data["select"]) && @$data["select"][0] == "1") echo "selected";?>
+								>Означает min и max</option>
+								<option value="2"
+								<?php if (isset($data["select"]) && @$data["select"][0] == "2") echo "selected";?>
 								>Означает min или max</option>
 							</optgroup>
 							<optgroup label="Связан со знаком функции">
-								<option value="2"
-								<?php if (isset($data["select"]) && @$data["select"][0] == "2") echo "selected";?>
-								>Отрицательное значение</option>
 								<option value="3"
 								<?php if (isset($data["select"]) && @$data["select"][0] == "3") echo "selected";?>
+								>Отрицательное значение</option>
+								<option value="4"
+								<?php if (isset($data["select"]) && @$data["select"][0] == "4") echo "selected";?>
 								>Положительное значение</option>
 							</optgroup>
 						</select>

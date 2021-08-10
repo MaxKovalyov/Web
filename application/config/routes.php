@@ -2,7 +2,7 @@
 
 return [
 
-    '' => [
+    'main/index' => [
         'controller' => 'main',
         'action' => 'index',
     ],
@@ -55,6 +55,31 @@ return [
     'test/validation' => [
         'controller' => 'test',
         'action' => 'validation',
+    ],
+
+    'guestBook/index' => [
+        'controller' => 'guestBook',
+        'action' => 'index',
+    ],
+
+    'uploadFile/index' => [
+        'controller' => 'uploadFile',
+        'action' => 'index',
+    ],
+
+    'blogEditor/index' => [
+        'controller' => 'blogEditor',
+        'action' => 'index',
+    ],
+
+    'myBlog/index' => [
+        'controller' => 'myBlog',
+        'action' => 'index',
+    ],
+
+    'uploadBlogs/index' => [
+        'controller' => 'uploadBlogs',
+        'action' => 'index',
     ],
 
 

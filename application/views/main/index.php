@@ -11,7 +11,7 @@
 				<h3>Выполнил студент группы ИС/б-18-3-о Ящук Максим Александрович</h3>
 			</tr>
 			<tr>
-				<img src="public/Images/me.jpg" alt="me" align="middle" height="400px">
+				<img src="/public/files/me.jpg" alt="me" align="middle" height="400px">
 			</tr>
 		</table>
 		<hr>

@@ -24,7 +24,7 @@ class FileManager {
 
     public function read():array {
         if($this->mode != 'w' || $this->mode != 'a' || $this->mode != 'x') {
-            return file($this->file);
+            return file($this->nameFile);
         } 
         else {
             return [];
