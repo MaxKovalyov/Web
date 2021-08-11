@@ -35,12 +35,21 @@ class BlogEditorController extends Controller
             }
         }
 
-        $this->allData = $this->model->findAll();
+        $per_page = 5;
+        $page = (int)(isset($_GET['page'])?($_GET['page']-1):0);
+        $start = abs($page*$per_page);
+        $this->allData = $this->model->findSome($start, $per_page);
+
+        $total_rows = $this->model->getCountRecords();
+
+        $num_pages = ceil($total_rows/$per_page);
 
         $vars = [
             'errors' => $this->errors,
             'data' => $this->data,
             'allData' => $this->allData,
+            'num_pages' => $num_pages,
+            'page' => $page,
         ];
 
         $this->view->render('Редактор блога', $vars);

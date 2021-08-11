@@ -18,13 +18,51 @@
     ?>
     <p class="pages">
         <?php
-            for($i = 1; $i <= $num_pages; $i++) {
-                if($i-1 == $page) {
-                    echo $i." "; 
+        echo 'Страницы: ';
+            if($page == 0) {
+                if($num_pages > 2) {
+                    echo '1 <a href="index?page=2">2</a> ... <a href="index?page='.($num_pages).'">'.($num_pages).'</a>';
                 } else {
-                    echo '<a href="index?page='.$i.'">'.$i.'</a> ';
-                }    
+                    if($num_pages == 2) {
+                        echo '1 <a href="index?page=2">2</a>';
+                    } else {
+                        if($num_pages == 1) {
+                            echo '1';
+                        }
+                    }
+                }
+            } else {
+                if($page == 1) {
+                    if($num_pages > 3) {
+                        echo '<a href="index?page=1">1</a> 2 <a href="index?page=3">3</a> ... <a href="index?page='.($num_pages).'">'.($num_pages).'</a>';
+                    } else {
+                        if($num_pages == 3) {
+                            echo '<a href="index?page=1">1</a> 2 <a href="index?page=3">3</a>';
+                        } else {
+                            if($num_pages == 2) {
+                                echo '<a href="index?page=1">1</a> 2';
+                            }
+                        }
+                    } 
+                } else {
+                    if($page == $num_pages-1) {
+                        echo '<a href="index?page=1">1</a> ... <a href="index?page='.($page).'">'.($page).'</a> '.($page+1);
+                    } else {
+                        if($page == $num_pages-2) {
+                            echo '<a href="index?page=1">1</a> ... <a href="index?page='.($page).'">'.($page).'</a> '.($page+1).' <a href="index?page='.($page+2).'">'.($page+2).'</a>';
+                        } else {
+                            echo '<a href="index?page=1">1</a> ... <a href="index?page='.($page).'">'.($page).'</a> '.($page+1).' <a href="index?page='.($page+2).'">'.($page+2).'</a> ... <a href="index?page='.($num_pages).'">'.($num_pages).'</a>';
+                        }
+                    }
+                }
             }
+            // for($i = 1; $i <= $num_pages; $i++) {
+            //     if($i-1 == $page) {
+            //         echo $i." "; 
+            //     } else {
+            //         if($i == 1)
+            //     }    
+            // }
         ?>
     </p>
     <hr>

@@ -19,8 +19,6 @@ class MyBlogController extends Controller
         $num_pages = ceil($total_rows/$per_page);
 
 
-        //$data = $this->model->findAll();
-
         $vars = [
             'data' => $data,
             'num_pages' => $num_pages,

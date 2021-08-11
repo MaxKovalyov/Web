@@ -35,4 +35,15 @@
             </tbody>
         </table>
     </div>
+    <p class="pages">
+        <?php
+            for($i = 1; $i <= $num_pages; $i++) {
+                if($i-1 == $page) {
+                    echo $i." "; 
+                } else {
+                    echo '<a href="index?page='.$i.'">'.$i.'</a> ';
+                }    
+            }
+        ?>
+    </p>
 </section>
