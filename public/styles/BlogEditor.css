@@ -58,3 +58,12 @@ td,th {
 	color:#000;
     text-decoration: underline solid red;
 }
+
+.pages {
+    color:#fff;
+    text-align: center;
+}
+
+.pages a {
+    color:#3ff;
+}
