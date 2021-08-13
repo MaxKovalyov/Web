@@ -3,11 +3,16 @@
 namespace application\controllers;
 
 use application\core\Controller;
+use application\models\StatisticModel;
 
 class MyBlogController extends Controller
 {
+    private $title = 'Мой блог';
 
     public function indexAction() {
+
+        $statistic = new StatisticModel();
+        $statistic->saveStatistic($this->title);
 
         $per_page = 2;
         $page = (int)(isset($_GET['page'])?($_GET['page']-1):0);
@@ -25,7 +30,7 @@ class MyBlogController extends Controller
             'page' => $page,
         ];
 
-        $this->view->render('Мой блог',$vars);
+        $this->view->render($this->title, $vars);
     }
 
 

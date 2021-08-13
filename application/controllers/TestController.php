@@ -4,20 +4,26 @@ namespace application\controllers;
 
 use application\core\Controller;
 use application\models\validators\TestValidator;
+use application\models\StatisticModel;
 
 class TestController extends Controller
 {
+    private $title = 'Тест по дисциплине';
 
     private $errors = [];
 
     private $data = [];
 
     public function indexAction() {
+
+        $statistic = new StatisticModel();
+        $statistic->saveStatistic($this->title);
+
         $vars = [
             'errors' => $this->errors,
             'data' => $this->data,
         ];
-        $this->view->render('Тест по дисциплине',$vars);
+        $this->view->render($this->title, $vars);
     }
 
     public function validationAction() {

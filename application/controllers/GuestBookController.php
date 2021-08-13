@@ -4,13 +4,18 @@ namespace application\controllers;
 
 use application\core\Controller;
 use application\lib\FileManager;
+use application\models\StatisticModel;
 
 class GuestBookController extends Controller
 {
     private $nameFile = "public/files/messages.inc";
+    private $title = 'Гостевая книга';
 
 
     public function indexAction() {
+
+        $statistic = new StatisticModel();
+        $statistic->saveStatistic($this->title);
 
         $file = new FileManager($this->nameFile, "a+");
         if((array_key_exists('name', $_POST)) && (!empty($_POST["name"]))) {
@@ -38,7 +43,7 @@ class GuestBookController extends Controller
             'data' => $data,
         ];
 
-        $this->view->render('Гостевая книга',$vars);
+        $this->view->render($this->title, $vars);
     }
 
 
