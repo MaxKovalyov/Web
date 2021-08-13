@@ -1,10 +1,10 @@
 <?php
 
-namespace application\controllers;
+namespace application\admin\controllers;
 
 use application\core\Controller;
 
-class UploadFileController extends Controller
+class AdminUploadFileController extends Controller
 {
 
     public function indexAction() {
@@ -16,7 +16,7 @@ class UploadFileController extends Controller
         }
 
 
-        $this->view->render('Загрузка файла');
+        $this->view->admin_render('admin_uploadBook.php','Загрузка файла',ucfirst($this->route[0]));
     }
 
 
