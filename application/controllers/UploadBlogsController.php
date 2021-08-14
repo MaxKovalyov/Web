@@ -17,7 +17,7 @@ class UploadBlogsController extends Controller
         $statistic = new Statistic();
         $statistic->saveStatistic($this->title);
 
-        if($_FILES["blogs"]) {
+        if(@$_FILES["blogs"]) {
             $extension = substr($_FILES["blogs"]["name"], strrpos($_FILES["blogs"]["name"], '.') + 1);
             if($extension == "csv") {
                 $delimiter = ';';

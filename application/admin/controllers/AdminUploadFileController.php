@@ -9,6 +9,8 @@ class AdminUploadFileController extends AdminController
 
     public function indexAction() {
 
+        $this->authenticate();
+
         if(!empty($_FILES["messages"])) {
             $source = $_FILES["messages"]["tmp_name"];
             $dest = "public/files/".$_FILES["messages"]["name"];

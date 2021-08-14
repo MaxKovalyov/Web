@@ -14,6 +14,8 @@ class AdminBlogEditorController extends AdminController {
     private $allData = [];
 
     public function indexAction() {
+
+        $this->authenticate();
         
         if(array_key_exists('title', $_POST)) {
             $this->data = $_POST;

@@ -13,6 +13,9 @@
     <title><?php echo $title; ?></title>
 </head>
 <body>
+	<div class="admin-area">
+		<a class="admin-ref" href="/blogEditor/index?admin_area=1">Админ</a>
+	</div>
     <section class="time">
         <div id="time">
 		    <script>

@@ -74,3 +74,21 @@ body {
 .links:hover:after {
 	display: block;
 }
+
+.admin-area {
+	position: absolute;
+	background: #a7a7a7;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+	border: 1px solid red;
+}
+
+.admin-ref {
+	text-decoration: none;
+    color: #000;
+}
+
+.admin-area:hover {
+	background: red;
+}

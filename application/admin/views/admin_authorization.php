@@ -11,6 +11,7 @@
             <p>
                 <input type="submit" class="button" value="Отправить">
             </p>
+            
         </form>
     </div>
 </section>

@@ -9,6 +9,8 @@ class AdminStatisticController extends AdminController
 
     public function indexAction() {
 
+        $this->authenticate();
+
         $per_page = 10;
         $page = (int)(isset($_GET['page'])?($_GET['page']-1):0);
         $start = abs($page*$per_page);
