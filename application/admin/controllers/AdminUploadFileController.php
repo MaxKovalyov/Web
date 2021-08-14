@@ -2,9 +2,9 @@
 
 namespace application\admin\controllers;
 
-use application\core\Controller;
+use application\admin\controllers\AdminController;
 
-class AdminUploadFileController extends Controller
+class AdminUploadFileController extends AdminController
 {
 
     public function indexAction() {

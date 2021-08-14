@@ -2,9 +2,9 @@
 
 namespace application\admin\controllers;
 
-use application\core\Controller;
+use application\admin\controllers\AdminController;
 
-class AdminStatisticController extends Controller
+class AdminStatisticController extends AdminController
 {
 
     public function indexAction() {
@@ -24,8 +24,6 @@ class AdminStatisticController extends Controller
             'num_pages' => $num_pages,
             'page' => $page,
         ];
-
-
 
         $this->view->admin_render('admin_statistic.php','Статистика посещений',ucfirst($this->route[0]),'admin_layout.php',$vars);
     }

@@ -2,10 +2,10 @@
 
 namespace application\admin\controllers;
 
-use application\core\Controller;
+use application\admin\controllers\AdminController;
 use application\models\validators\BlogValidator;
 
-class AdminBlogEditorController extends Controller {
+class AdminBlogEditorController extends AdminController {
     
     private $errors = [];
 
