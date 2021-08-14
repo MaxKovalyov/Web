@@ -25,6 +25,7 @@
 		<nav>
             <a class="links" href="/blogEditor/index?admin_area=1">Редактор блога</a>
             <a class="links" href="/uploadFile/index?admin_area=1">Загрузка гостевой книги</a>
+            <a class="links" href="/statistic/index?admin_area=1">Статистика посещений</a>
 			<a class="links" href="/autorization/log_out?admin_area=1">Выход</a>
 		</nav>
 		<hr>

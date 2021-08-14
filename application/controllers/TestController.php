@@ -4,7 +4,7 @@ namespace application\controllers;
 
 use application\core\Controller;
 use application\models\validators\TestValidator;
-use application\models\StatisticModel;
+use application\models\Statistic;
 
 class TestController extends Controller
 {
@@ -16,7 +16,7 @@ class TestController extends Controller
 
     public function indexAction() {
 
-        $statistic = new StatisticModel();
+        $statistic = new Statistic();
         $statistic->saveStatistic($this->title);
 
         $vars = [

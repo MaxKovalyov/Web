@@ -1,0 +1,29 @@
+.table {
+    width: 95%;
+    border-color: #dee2e6;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background:rgb(200, 200, 200);
+}
+
+thead {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    text-align: center;
+    background-color: #402d2d !important;
+    color: #fff;
+}
+
+td,th {
+    border: 1px solid #ffffff85;
+}
+
+.pages {
+    color:#fff;
+    text-align: center;
+}
+
+.pages a {
+    color:#3ff;
+}

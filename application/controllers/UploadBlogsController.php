@@ -4,7 +4,7 @@ namespace application\controllers;
 
 use application\core\Controller;
 use application\models\validators\UploadBlogsValidator;
-use application\models\StatisticModel;
+use application\models\Statistic;
 
 class UploadBlogsController extends Controller
 {
@@ -14,7 +14,7 @@ class UploadBlogsController extends Controller
 
     public function indexAction() {
 
-        $statistic = new StatisticModel();
+        $statistic = new Statistic();
         $statistic->saveStatistic($this->title);
 
         if($_FILES["blogs"]) {

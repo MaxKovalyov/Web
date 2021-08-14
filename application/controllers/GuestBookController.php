@@ -4,7 +4,7 @@ namespace application\controllers;
 
 use application\core\Controller;
 use application\lib\FileManager;
-use application\models\StatisticModel;
+use application\models\Statistic;
 
 class GuestBookController extends Controller
 {
@@ -14,7 +14,7 @@ class GuestBookController extends Controller
 
     public function indexAction() {
 
-        $statistic = new StatisticModel();
+        $statistic = new Statistic();
         $statistic->saveStatistic($this->title);
 
         $file = new FileManager($this->nameFile, "a+");

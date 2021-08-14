@@ -3,7 +3,7 @@
 namespace application\controllers;
 
 use application\core\Controller;
-use application\models\StatisticModel;
+use application\models\Statistic;
 
 class MainController extends Controller
 {
@@ -12,7 +12,7 @@ class MainController extends Controller
 
     public function indexAction() {
 
-        $statistic = new StatisticModel();
+        $statistic = new Statistic();
         $statistic->saveStatistic($this->title);
 
         $vars = [

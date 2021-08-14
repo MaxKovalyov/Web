@@ -5,7 +5,7 @@ namespace application\controllers;
 use application\core\Controller;
 use application\lib\FileManager;
 use application\models\validators\ContactValidator;
-use application\models\StatisticModel;
+use application\models\Statistic;
 
 class ContactController extends Controller
 {
@@ -17,7 +17,7 @@ class ContactController extends Controller
 
     public function validationAction() {
 
-        $statistic = new StatisticModel();
+        $statistic = new Statistic();
         $statistic->saveStatistic($this->title);
 
         $this->data = $_POST;

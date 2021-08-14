@@ -1,20 +1,15 @@
 <?php
 
-namespace application\controllers;
+namespace application\admin\controllers;
 
 use application\core\Controller;
-use application\models\Statistic;
 
-class MyBlogController extends Controller
+class AdminStatisticController extends Controller
 {
-    private $title = 'Мой блог';
 
     public function indexAction() {
 
-        $statistic = new Statistic();
-        $statistic->saveStatistic($this->title);
-
-        $per_page = 2;
+        $per_page = 10;
         $page = (int)(isset($_GET['page'])?($_GET['page']-1):0);
         $start = abs($page*$per_page);
         $data = $this->model->findSome($start, $per_page);
@@ -30,7 +25,9 @@ class MyBlogController extends Controller
             'page' => $page,
         ];
 
-        $this->view->render($this->title, $vars);
+
+
+        $this->view->admin_render('admin_statistic.php','Статистика посещений',ucfirst($this->route[0]),'admin_layout.php',$vars);
     }
 
 
