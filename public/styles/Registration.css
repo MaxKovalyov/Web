@@ -26,10 +26,9 @@ h1 {
     margin: 20px;
 }
 
-.form-registration {
+.form-registration, .form-authorization {
     background-color: #733636;
     max-width: 400px;
-    max-height: 560px;
     margin: auto;
     border: 2px solid #ffffff4a;
     border-radius: 8px;
@@ -39,6 +38,14 @@ h1 {
     right: 0px;
     left: 0px;
     bottom: 0px;
+}
+
+.form-registration {
+    max-height: 590px;
+}
+
+.form-authorization {
+    max-height: 420px;
 }
 
 .main {
@@ -60,5 +67,16 @@ h1 {
 	display: block;
 	color:#fff;
     text-decoration: underline solid red;
+}
+
+.links a {
+    color: #fff;
+    font-size: 20px;
+    padding: 0 10px;
+    text-decoration: overline;
+}
+
+.links a:hover {
+    color: #ffffff80;
 }
 

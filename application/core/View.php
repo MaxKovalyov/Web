@@ -32,7 +32,7 @@ class View
         
     }
 
-    public function force_render($content_view, $title, $name, $layout, $vars = []) {
+    public function force_render($content_view, $title, $layout, $vars = []) {
 
         extract($vars);
 

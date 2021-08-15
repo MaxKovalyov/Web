@@ -93,13 +93,40 @@ body {
 	background: red;
 }
 
-.login-area {
+.login-area, .user-area {
 	position: absolute;
 	top: 0px;
 	right: 0px;
-	padding: 15px;
 	background: #000;
-	font-size: 24px;
 	border: 1px solid white;
 	border-radius: 5px;
+}
+
+.login-area {
+	font-size: 24px;
+	padding: 15px;
+}
+
+.user-area {
+	font-size: 20px;
+}
+
+.user-item {
+	color: #3ff;
+	text-decoration: none;
+	padding: 10px 12px;
+	display: inline-block;
+	margin: 0;
+}
+
+p+.user-item:hover {
+	background-color: #335;
+	opacity: 80%;
+	transition: all 100ms ease-in;
+}
+
+.name-user{
+	text-indent: inherit;
+	color: #fff;
+	font-size: 20px;
 }

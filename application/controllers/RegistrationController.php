@@ -9,7 +9,7 @@ class RegistrationController extends Controller
     private $title = 'Регистрация пользователя';
 
     private $data = [];
-    private $error = [];
+    private $error;
 
     public function indexAction() {
 
@@ -23,7 +23,7 @@ class RegistrationController extends Controller
                 header('Location:/main/index');
                 exit;
             } else {
-                $this->error["login"] = "Пользователь с таким логином уже существует!";
+                $this->error = "Пользователь с таким логином уже существует!";
                 $this->data = $_POST;
             }
         }
@@ -33,7 +33,7 @@ class RegistrationController extends Controller
             'error' => $this->error,
         ];
 
-        $this->view->force_render('application/views/'.$this->route[0].'/'.$this->route[1].'.php',$this->title,ucfirst($this->route[0]),'form.php',$vars);
+        $this->view->force_render('application/views/'.$this->route[0].'/'.$this->route[1].'.php',$this->title,'form.php',$vars);
     }
 
 

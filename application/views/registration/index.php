@@ -12,7 +12,7 @@
         <div class="form-row">
             <label for="login">Логин</label>
             <input class="row" type="text" name="login" value="<?php echo @$data["login"]?>" required autocomplete="off">
-            <span class="error"><?php echo @$error["login"] ?></span>
+            <span class="error"><?php echo @$error ?></span>
         </div>
         <div class="form-row">
             <label for="password">Пароль</label>
@@ -20,6 +20,10 @@
         </div>
         <p>
             <input type="submit" class="button" value="Отправить">
+        </p>
+        <p class="links">
+            <a href="/authorization/index">Войти</a>
+            <a href="/main/index">Назад</a>
         </p>
     </form>
 </div>

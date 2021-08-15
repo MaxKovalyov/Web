@@ -23,17 +23,21 @@ class Registration extends BaseActiveRecord{
 
     }
 
-    public static function find($login) {
-        $sql = "SELECT * FROM ".static::$tableName." WHERE login = '$login'";
-        $stmt = static::$pdo->query($sql);
+    // public static function find($login) {
+    //     $sql = "SELECT * FROM ".static::$tableName." WHERE login = '$login'";
+    //     $stmt = static::$pdo->query($sql);
 
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    //     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if(!$row) {
-            return false;
-        } else {
-            return true;
-        }
-    }
+    //     if(!$row) {
+    //         return false;
+    //     } else {
+    //         $ar_obj = new static();
+    //         foreach($row as $key => $value) {
+    //             $ar_obj->$key = $value;
+    //         }
+    //         return $ar_obj;
+    //     }
+    // }
 
 }
