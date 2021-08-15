@@ -19,9 +19,12 @@ class TestController extends Controller
         $statistic = new Statistic();
         $statistic->saveStatistic($this->title);
 
+        $allData = $this->model->findAll();
+
         $vars = [
             'errors' => $this->errors,
             'data' => $this->data,
+            'allData' => $allData,
         ];
         $this->view->render($this->title, $vars);
     }

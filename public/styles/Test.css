@@ -29,3 +29,28 @@ h3 {
 	background: #333
 }
 
+.table {
+    width: 95%;
+    margin-bottom: 1rem;
+    color: #000000;
+    vertical-align: top;
+    border-color: #dee2e6;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background:rgb(200, 200, 200);
+	margin-top: 20px;
+}
+
+thead {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    text-align: center;
+    background-color: #402d2d !important;
+    color: #fff;
+}
+
+td,th {
+    border: 1px solid #ffffff85;
+}
+
