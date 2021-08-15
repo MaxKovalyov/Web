@@ -92,3 +92,14 @@ body {
 .admin-area:hover {
 	background: red;
 }
+
+.login-area {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	padding: 15px;
+	background: #000;
+	font-size: 24px;
+	border: 1px solid white;
+	border-radius: 5px;
+}

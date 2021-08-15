@@ -14,7 +14,11 @@
 </head>
 <body>
 	<div class="admin-area">
-		<a class="admin-ref" href="/blogEditor/index?admin_area=1">Админ</a>
+		<a class="admin-ref" href="/blogEditor/index?admin_area=1">Админ-зона</a>
+	</div>
+	<div class="login-area">
+		<a class="links" href="/login/index">Вход</a>
+		<a class="links" href="/registration/index">Регистрация</a>
 	</div>
     <section class="time">
         <div id="time">

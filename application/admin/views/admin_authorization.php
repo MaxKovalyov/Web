@@ -1,7 +1,7 @@
 <section class="main">
     <div class="form-authorization">
         <form class="form" action="/authorization/index?admin_area=1" method="POST">
-            <h3>Авторизация</h3>
+            <h3>Авторизация админа</h3>
             <div class="form-row">
                 <input type="text" name="login" placeholder="Логин" required autocomplete="off">
             </div>

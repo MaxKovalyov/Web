@@ -26,7 +26,7 @@ class AdminAuthorizationController extends Controller
             $_SESSION['isAdmin']=0;
         }
 
-        $this->view->admin_render('admin_authorization.php','Авторизация',ucfirst($this->route[0]),'admin_layout.php');
+        $this->view->admin_render('admin_authorization.php','Авторизация админа',ucfirst($this->route[0]),'admin_layout.php');
     }
 
 

@@ -31,4 +31,12 @@ class View
         include 'application/admin/views/'.$layout;
         
     }
+
+    public function force_render($content_view, $title, $name, $layout, $vars = []) {
+
+        extract($vars);
+
+        include 'application/views/layouts/'.$layout;
+        
+    }
 }
