@@ -41,7 +41,7 @@
                 if($i-1 == $page) {
                     echo $i." "; 
                 } else {
-                    echo '<a href="index?page='.$i.'">'.$i.'</a> ';
+                    echo '<a href="index?page='.$i.'&admin_area=1">'.$i.'</a> ';
                 }    
             }
         ?>

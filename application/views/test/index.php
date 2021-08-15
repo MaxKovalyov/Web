@@ -88,4 +88,38 @@
 			</div>
 		</form>
 		<hr>
+		<div class="table-results">
+			<h1>Результаты тестов</h1>
+        	<table class="table">
+            	<thead>
+                	<tr>
+                    	<th>Дата</th>
+                    	<th>ФИО</th>
+						<th>Группа</th>
+                    	<th>Результат 1 вопроса</th>
+                    	<th>Результат 2 вопроса</th>
+                    	<th>Результат 3 вопроса</th>
+                	</tr>
+            	</thead>
+            	<tbody>
+                	<?php
+						if(isset($_SESSION["login"])) {
+							foreach($allData as $key) {
+								echo '<tr><td>'.$key["date"].'</td><td>'.$key["fio"].'</td><td>'.$key["group"].'</td>';
+								if($key["answer1"]) echo '<td>Верно</td>';
+								else echo '<td>Неверно</td>';
+								if($key["answer2"]) echo '<td>Верно</td>';
+								else echo '<td>Неверно</td>';
+								if($key["answer3"]) echo '<td>Верно</td>';
+								else echo '<td>Неверно</td>';
+								echo '</tr>';
+							}
+						} else {
+							echo '<tr><td colspan="6">Авторизуйтесь, чтоб увидеть результаты!</td></tr>';
+						}
+                	?>
+            	</tbody>
+        	</table>
+    	</div>
+		<hr>
 	</section>

@@ -1,0 +1,24 @@
+.form-row {
+    margin: 10px;
+}
+
+.form-authorization {
+    background-color: rgb(113 121 142);
+    max-width: 300px;
+    margin: 0 auto;
+    border: 2px solid #969696;
+    border-radius: 8px;
+}
+
+.button {
+    width: 100px;
+    height: 50px;
+    color:rgb(0, 0, 0);
+    background:rgb(40 251 255);
+    border: 4px solid #00000029;
+    border-radius: 3px;
+}
+
+.main {
+    padding: 40px 0;
+}

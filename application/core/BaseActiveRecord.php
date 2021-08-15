@@ -42,8 +42,8 @@ class BaseActiveRecord {
         }
     }
 
-    public static function find($id) {
-        $sql = "SELECT * FROM ".static::$tableName." WHERE id = $id";
+    public static function find($login) {
+        $sql = "SELECT * FROM ".static::$tableName." WHERE login = '$login'";
         $stmt = static::$pdo->query($sql);
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);

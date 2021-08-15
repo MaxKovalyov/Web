@@ -1,0 +1,82 @@
+body {
+	background: url("../files/mainbag.jpg") center;
+	background-size: cover;
+}
+
+.row {
+    min-width: 300px;
+    min-height: 35px;
+    background:rgb(195, 195, 195);
+    font-size: 24px;
+}
+
+label {
+    display: block;
+    font-size: 20px;
+    text-align: left;
+    color: #fff;
+}
+
+h1 {
+    font-size: 40px;
+    color:#ffffffad;
+}
+
+.form-row {
+    margin: 20px;
+}
+
+.form-registration, .form-authorization {
+    background-color: #733636;
+    max-width: 400px;
+    margin: auto;
+    border: 2px solid #ffffff4a;
+    border-radius: 8px;
+    text-align: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+}
+
+.form-registration {
+    max-height: 590px;
+}
+
+.form-authorization {
+    max-height: 420px;
+}
+
+.main {
+    padding: 20px 0;
+}
+
+.button {
+    width: 150px;
+    height: 70px;
+    color:rgb(0 0 0 / 65%);
+    background:rgb(255 166 166);
+    border: 4px solid #00000029;
+    border-radius: 3px;
+    font-size: 20px;
+}
+
+.error {
+	font-size: 20px;
+	display: block;
+	color:#fff;
+    text-decoration: underline solid red;
+}
+
+.links a {
+    color: #fff;
+    font-size: 20px;
+    padding: 0 10px;
+    text-decoration: overline;
+}
+
+.links a:hover {
+    color: #ffffff80;
+}
+

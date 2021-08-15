@@ -74,3 +74,59 @@ body {
 .links:hover:after {
 	display: block;
 }
+
+.admin-area {
+	position: absolute;
+	background: #a7a7a7;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+	border: 1px solid red;
+}
+
+.admin-ref {
+	text-decoration: none;
+    color: #000;
+}
+
+.admin-area:hover {
+	background: red;
+}
+
+.login-area, .user-area {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background: #000;
+	border: 1px solid white;
+	border-radius: 5px;
+}
+
+.login-area {
+	font-size: 24px;
+	padding: 15px;
+}
+
+.user-area {
+	font-size: 20px;
+}
+
+.user-item {
+	color: #3ff;
+	text-decoration: none;
+	padding: 10px 12px;
+	display: inline-block;
+	margin: 0;
+}
+
+p+.user-item:hover {
+	background-color: #335;
+	opacity: 80%;
+	transition: all 100ms ease-in;
+}
+
+.name-user{
+	text-indent: inherit;
+	color: #fff;
+	font-size: 20px;
+}

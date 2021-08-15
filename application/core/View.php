@@ -4,41 +4,39 @@ namespace application\core;
 
 class View 
 {
-
-    public $path;
     public $route;
+    public $path;
     public $layout = 'default';
 
     public function __construct($route) {
         $this->route = $route;
-        $this->path = $route['controller'].'/'.$route['action'];
+        $this->path = $route[0].'/'.$route[1];
     }
 
     public function render($title, $vars = []) {
         extract($vars);
-        //debug($this->path);
         if(file_exists('application/views/'.$this->path.'.php')) {
             ob_start();
             require 'application/views/'.$this->path.'.php';
             $content = ob_get_clean();
-            $name = ucfirst($this->route['controller']);
+            $name = ucfirst($this->route[0]);
             require 'application/views/layouts/'.$this->layout.'.php';
-        } else {
-            View::errorCode(404);
-        }
+        }     
+    }
+
+    public function admin_render($content_view, $title, $name, $layout = 'admin_layout.php', $vars = []) {
+
+        extract($vars);
+
+        include 'application/admin/views/'.$layout;
         
     }
 
-    public static function errorCode($code) {
-        http_response_code($code);
-        require 'application/views/errors/'.$code.'.php';
-        exit;
+    public function force_render($content_view, $title, $layout, $vars = []) {
+
+        extract($vars);
+
+        include 'application/views/layouts/'.$layout;
+        
     }
-
-    public function redirect($url) {
-        header('location: '.$url);
-        exit;
-    }
-
-
 }

@@ -13,6 +13,22 @@
     <title><?php echo $title; ?></title>
 </head>
 <body>
+	<div class="admin-area">
+		<a class="admin-ref" href="/blogEditor/index?admin_area=1">Админ-зона</a>
+	</div>
+	<?php
+		if(isset($_SESSION["login"])) {
+			echo '<div class="user-area">';
+			echo '<p class="user-item name-user">Пользователь: '.$_SESSION["fio"].'</p>';
+			echo '<a class="user-item" href="/authorization/logOut">Выход</a>';
+			echo '</div>';
+		} else {
+			echo '<div class="login-area">';
+			echo '<a class="links" href="/authorization/index">Вход</a>';
+			echo '<a class="links" href="/registration/index">Регистрация</a>';
+			echo '</div>';
+		}
+	?>
     <section class="time">
         <div id="time">
 		    <script>
@@ -27,8 +43,6 @@
 			<a class="links" href="/contact/index">Контакт</a>
 			<a class="links" href="/test/index">Тест</a>
 			<a class="links" href="/guestBook/index">Гостевая книга</a>
-			<a class="links" href="/uploadFile/index">Загрузить файл</a>
-			<a class="links" href="/blogEditor/index">Редактор блога</a>
 			<a class="links" href="/uploadBlogs/index">Загрузить блог</a>
 			<a class="links" href="/myBlog/index">Мой блог</a>
 			<div class="dropdown">

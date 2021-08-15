@@ -4,61 +4,43 @@ namespace application\core;
 
 class Router 
 {
-    protected $routes;
-    protected $params = [];  
-
-    function __construct() {
-        $routesPath = 'application/config/routes.php';
-        $this->routes = include($routesPath);
-        // foreach($arr as $key => $val) {
-        //     $this->add($key, $val);
-        // }
-    }
-
-    /**
-     * Создание пути
-     */
-    // public function add($route, $params) {
-    //     $route = '#^'.$route.'$#';
-    //     $this->routes[$route] = $params;
-    //     //debug($this->routes);
-    // }
-
-    /**
-     * Проверка на существование пути
-     */
-    public function match() {
+    static function route() {
         $url = trim($_SERVER['REQUEST_URI'], '/');
-        foreach($this->routes as $route => $params) {
-            if(preg_match("~$route~", $url, $matches)) {
-                $this->params = $params;
-                return true;
-            }
+        $route = explode('/',$url);
+        $str = strpos($route[1],"?");
+        if($str) {
+            $route[1] = substr($route[1],0,$str);  
         }
-        return false;
-    }
-    
-    /**
-     * Проверка на существование классов и методов и создание объектов соответствующих классов, вызов экшена
-     */
-    public function run() {
-        if($this->match()) {
-            $path = 'application\controllers\\'.ucfirst($this->params['controller']).'Controller';
-            if(class_exists($path)) {
-                $action = $this->params['action'].'Action';
-                if(method_exists($path, $action)) {
-                    $controller = new $path($this->params);
-                    $controller->$action();
-                } else {
-                    View::errorCode(403);
-                }
-            } else {
-                View::errorCode(403);
-            }
+        if(@$_REQUEST['admin_area']) {
+            $admin_path = 'admin\\';
+            $admin_class_prefix = 'Admin';
         } else {
-            View::errorCode(404);
+            $admin_path = '';
+            $admin_class_prefix = '';
+        }
+        $controller_name = $route[0];
+        $action_name = $route[1];
+        $controller_class = "application\\${admin_path}controllers\\".$admin_class_prefix.ucfirst($controller_name).'Controller';
+        if(class_exists($controller_class)) {
+            $controller = new $controller_class($route);
+        } else {
+            die("Ошибка! Контроллер $controller_class не найден!");
+        }
+
+        $model_name = ucfirst($controller_name);
+        $model_class = "application\models\\".$model_name;
+        if(class_exists($model_class)) {
+            $model = new $model_class;
+        } else {
+            die("ОШИБКА! Модель $model_class не найдена");
+        }
+        $controller->model = $model;
+        
+        $action = $action_name.'Action';
+        if(method_exists($controller,$action)) {
+            $controller->$action();
+        } else {
+            die("ОШИБКА! Отсутствует метод $action_name контроллера $controller_class");
         }
     }
-
-
 }

@@ -1,13 +1,12 @@
 <?php
 
-namespace application\controllers;
+namespace application\admin\controllers;
 
-use application\core\Controller;
+use application\admin\controllers\AdminController;
 use application\models\validators\BlogValidator;
 
-class BlogEditorController extends Controller
-{
-
+class AdminBlogEditorController extends AdminController {
+    
     private $errors = [];
 
     private $data = [];
@@ -16,6 +15,8 @@ class BlogEditorController extends Controller
 
     public function indexAction() {
 
+        $this->authenticate();
+        
         if(array_key_exists('title', $_POST)) {
             $this->data = $_POST;
             $this->data["img"] = $_FILES["img"]["name"];
@@ -52,8 +53,9 @@ class BlogEditorController extends Controller
             'page' => $page,
         ];
 
-        $this->view->render('Редактор блога', $vars);
-    }
 
+        $this->view->admin_render('admin_blogEditor.php', 'Редактор блога', ucfirst($this->route[0]),'admin_layout.php', $vars);
+
+    }
 
 }

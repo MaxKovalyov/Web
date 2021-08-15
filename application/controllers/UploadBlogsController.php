@@ -4,14 +4,20 @@ namespace application\controllers;
 
 use application\core\Controller;
 use application\models\validators\UploadBlogsValidator;
+use application\models\Statistic;
 
 class UploadBlogsController extends Controller
 {
+    private $title = 'Загрузка сообщений блога';
 
     private $errors = [];
 
     public function indexAction() {
-        if($_FILES["blogs"]) {
+
+        $statistic = new Statistic();
+        $statistic->saveStatistic($this->title);
+
+        if(@$_FILES["blogs"]) {
             $extension = substr($_FILES["blogs"]["name"], strrpos($_FILES["blogs"]["name"], '.') + 1);
             if($extension == "csv") {
                 $delimiter = ';';
@@ -39,7 +45,7 @@ class UploadBlogsController extends Controller
             'errors' => $this->errors,
         ];
 
-        $this->view->render('Загрузка сообщений блога',$vars);
+        $this->view->render($this->title, $vars);
     }
 
 
