@@ -11,8 +11,8 @@
         </div>
         <div class="form-row">
             <label for="login">Логин</label>
-            <input class="row" type="text" name="login" value="<?php echo @$data["login"]?>" required autocomplete="off">
-            <span class="error"><?php echo @$error ?></span>
+            <input class="row" type="text" onblur="checkLogin(this.value)" name="login" value="<?php echo @$data["login"]?>" required autocomplete="off">
+            <span class="error" id="error"><?php echo @$error?></span>
         </div>
         <div class="form-row">
             <label for="password">Пароль</label>
@@ -27,3 +27,19 @@
         </p>
     </form>
 </div>
+<script type="text/javascript">
+    function checkLogin(login) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open('POST','/registration/checkLogin',true);
+        xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+        xmlhttp.send("login="+encodeURIComponent(login));
+        xmlhttp.onreadystatechange = function() {
+            if(xmlhttp.readyState==4) {
+                if(xmlhttp.status==200) {
+                    if(xmlhttp.responseText) document.getElementById("error").innerHTML = "Логин занят!";
+                    else document.getElementById("error").innerHTML = "";
+                }
+            }
+        };
+    }
+</script>
