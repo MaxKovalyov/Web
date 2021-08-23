@@ -49,10 +49,15 @@ class BaseActiveRecord {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if(!$row) {
-            return false;
-        } else {
-            return true;
+            return null;
         }
+
+        $ar_obj = new static();
+        foreach($row as $key => $value) {
+            $ar_obj->$key = $value;
+        }
+
+        return $ar_obj;
     }
 
     public static function findAll() {

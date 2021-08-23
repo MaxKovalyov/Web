@@ -23,13 +23,14 @@
             <thead>
                 <tr>
                     <th>Дата создания</th>
-                    <th>Заголовок блока</th>
+                    <th>Заголовок блога</th>
+                    <th>Описание блога</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 foreach($allData as $key) {
-                    echo '<tr><td>'.$key["date"].'</td><td>'.$key["title"].'</td></tr>';
+                    echo '<tr><td>'.$key["date"].'</td><td>'.$key["title"].'</td><td>'.$key["message"].'</td></tr>';
                 }
                 ?>
             </tbody>

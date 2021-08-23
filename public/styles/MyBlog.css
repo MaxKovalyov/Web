@@ -55,3 +55,88 @@
 .pages a {
     color:#3ff;
 }
+
+.comments {
+    border-top: 1px solid red;
+    color: white;
+}
+
+.comment-title {
+    display: flex;
+}
+
+.comment-title p {
+    padding: 10px;
+    margin: 0;
+}
+
+.comment-title h3 {
+    margin: 0;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.comment-title a {
+    margin-left: 40%;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    background-color: #ea00ff3b;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.add-comment {
+    position: absolute;
+    color: white;
+    text-align: center;
+    background: #36003beb;
+    display: inline-flex;
+    margin-top: 60px;
+}
+
+.add-comment p {
+    margin-left: 10px;
+}
+
+.add-comment textarea {
+    display: block;
+    margin: 10px;
+}
+
+.add-comment input{
+    margin: 10px;
+    background: #a37de0;
+    border: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+}
+
+.table {
+    width: 98%;
+    color: #000000;
+    vertical-align: top;
+    border-color: #dee2e6;
+    border-collapse: collapse;
+    background:rgb(200, 200, 200);
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+thead {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    text-align: center;
+    background-color: #402d2d !important;
+    color: #fff;
+}
+
+td,th {
+    border: 1px solid #ffffff85;
+}
+
