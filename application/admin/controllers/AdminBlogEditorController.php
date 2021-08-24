@@ -4,6 +4,7 @@ namespace application\admin\controllers;
 
 use application\admin\controllers\AdminController;
 use application\models\validators\BlogValidator;
+use DOMDocument;
 
 class AdminBlogEditorController extends AdminController {
     
@@ -56,6 +57,24 @@ class AdminBlogEditorController extends AdminController {
 
         $this->view->admin_render('admin_blogEditor.php', 'Редактор блога', ucfirst($this->route[0]),'admin_layout.php', $vars);
 
+    }
+
+    public function updateBlogAction() {
+        if(isset($_REQUEST["xml"])) {
+            $xml = simplexml_load_string($_REQUEST["xml"]);
+            header('Content-Type: text/javascript');
+            $data = $this->model->find($xml->id);
+            $this->model->id = $data->id;
+            $this->model->date = $data->date;
+            $this->model->title = $xml->title;
+            $this->model->message = $xml->message;
+            $this->model->autor = $data->autor;
+            $this->model->img = $data->img;
+            $this->model->update($xml->id);
+            echo 'var js_Result = "'.$_REQUEST["xml"].'";'."\n";
+            echo 'makeLoadComplete();',"\n";
+            exit;
+        }
     }
 
 }
