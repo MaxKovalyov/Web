@@ -20,6 +20,10 @@ class RegistrationController extends Controller
                 $this->model->login = $_POST["login"];
                 $this->model->password = $_POST["password"];
                 $this->model->save();
+                $_SESSION["login"] = $_POST["login"];
+                $_SESSION["password"] = $_POST["password"];
+                $_SESSION["fio"] = $_POST["fio"];
+                $_SESSION["email"] = $_POST["email"];
                 header('Location:/main/index');
                 exit;
             } else {
@@ -34,6 +38,11 @@ class RegistrationController extends Controller
         ];
 
         $this->view->force_render('application/views/'.$this->route[0].'/'.$this->route[1].'.php',$this->title,'form.php',$vars);
+    }
+
+    public function checkLoginAction() {
+        $login = htmlspecialchars($_POST["login"]);
+        echo $this->model->find($login);
     }
 
 

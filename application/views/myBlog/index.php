@@ -3,15 +3,33 @@
     <?php
         foreach($data as $key) {
             echo '<div class="row">';
-            echo '<div class="col-md-7">';
-            echo '<h2>'.$key["title"].'</h2>';
-            echo '<p class="lead">Автор: '.$key["autor"].'</p>';
-            echo '<p class="lead">Дата добавления: '.$key["date"].'</p>';
-            echo '<p class="lead">Описание: '.$key["message"].'</p>';
+                echo '<div class="col-md-7">';
+                    echo '<h2>'.$key["title"].'</h2>';
+                    echo '<p class="lead">Автор: '.$key["autor"].'</p>';
+                    echo '<p class="lead">Дата добавления: '.$key["date"].'</p>';
+                    echo '<p class="lead">Описание: '.$key["message"].'</p>';
+                echo '</div>';
+                echo '<div class="col-md-5">';
+                    echo '<img class="img-fluid mx-auto" alt="300x300" style="width: 300px; height: 300px;" src="/'.$key["img"].'" data-holder-rendered="true">';
+                echo '</div>';
             echo '</div>';
-            echo '<div class="col-md-5">';
-            echo '<img class="img-fluid mx-auto" alt="300x300" style="width: 300px; height: 300px;" src="/'.$key["img"].'" data-holder-rendered="true">';
-            echo '</div>';
+            echo '<div class="comments">';
+                echo '<div class="comment-title">';
+                    echo '<h3>Комментарии</h3>';
+                    if(array_key_exists("login",$_SESSION)) {
+                        echo '<a onclick="addComment.call(this,'.$key["id"].')">Добавить комментарий</a>';
+                    }
+                echo '</div>';
+                echo '<table class="table" id="'.$key["id"].'">';
+                    echo '<thead><tr><th>Дата</th><th>Пользователь</th><th>Комментарий</th></tr></thead>';
+                    echo '<tbody>';
+                    foreach($comments as $value) {
+                        if($value["id_blog"]==$key["id"]) {
+                            echo '<tr><td>'.$value["date"].'</td><td>'.$value["author"].'</td><td>'.$value["message"].'</td></tr>';
+                        }
+                    }
+                    echo '</tbody>';
+                echo '</table>';
             echo '</div>';
             echo '<hr>';
         }

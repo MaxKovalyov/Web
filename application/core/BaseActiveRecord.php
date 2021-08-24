@@ -120,14 +120,14 @@ class BaseActiveRecord {
         
     }
 
-    public function update() {
+    public function update($id) {
         $fields_list = array();
         foreach(static::$dbFields as $field => $field_type) {
             $value = $this->$field;
             if(strpos($field_type, 'int')===false) $value = "'$value'";
             $fields_list[] = "$field = $value";
         }
-        $sql = "UPDATE ".static::$tableName." SET ".join(',',$fields_list)." WHERE id = ".$this->id;
+        $sql = "UPDATE ".static::$tableName." SET ".join(',',$fields_list)." WHERE id = ".$id;
         $stmt = static::$pdo->query($sql);
         if($stmt) {
             return $stmt->fetch(PDO::FETCH_ASSOC);

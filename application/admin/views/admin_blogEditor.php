@@ -23,13 +23,17 @@
             <thead>
                 <tr>
                     <th>Дата создания</th>
-                    <th>Заголовок блока</th>
+                    <th>Заголовок блога</th>
+                    <th>Описание блога</th>
+                    <th>Редактировать</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 foreach($allData as $key) {
-                    echo '<tr><td>'.$key["date"].'</td><td>'.$key["title"].'</td></tr>';
+                    $key["title"]=htmlspecialchars($key["title"]);
+                    $key["message"]=htmlspecialchars($key["message"]);
+                    echo '<tr id="'.$key["id"].'"><td>'.$key["date"].'</td><td id="td_title">'.$key["title"].'</td><td id="td_message">'.$key["message"].'</td><td><a onclick="editBlog('.$key["id"].',\''.$key["title"].'\',\''.$key["message"].'\')">Изменить</a></td></tr>';
                 }
                 ?>
             </tbody>

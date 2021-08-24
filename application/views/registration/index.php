@@ -11,8 +11,8 @@
         </div>
         <div class="form-row">
             <label for="login">Логин</label>
-            <input class="row" type="text" name="login" value="<?php echo @$data["login"]?>" required autocomplete="off">
-            <span class="error"><?php echo @$error ?></span>
+            <input class="row" type="text" onblur="checkLogin(this.value)" name="login" value="<?php echo @$data["login"]?>" required autocomplete="off">
+            <span class="error" id="error"><?php echo @$error?></span>
         </div>
         <div class="form-row">
             <label for="password">Пароль</label>
